@@ -1,0 +1,13 @@
+#appContainer {
+  clear: both;
+}
+
+#appForm {
+  width: 50%;
+  float: left;
+}
+
+#tasksList {
+  width: 50%;
+  float: right;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
+
+
+    <!-- JSZip library -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.6.0/jszip.min.js"></script>
+
+    <!-- Globalize scripts -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cldrjs/0.4.5/cldr.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cldrjs/0.4.5/cldr/event.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cldrjs/0.4.5/cldr/supplemental.min.js"></script>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/globalize/1.0.0/globalize.js"></script>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/globalize/1.0.0/globalize/message.js"></script>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/globalize/1.0.0/globalize/number.js"></script>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/globalize/1.0.0/globalize/currency.js"></script>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/globalize/1.0.0/globalize/date.js"></script>
+
+    <link rel="stylesheet" href="node_modules/devextreme/dist/css/dx.common.css">
+    <link rel="stylesheet" href="node_modules/devextreme/dist/css/dx.light.css">
+
+    <script src="node_modules/devextreme/dist/js/dx.all.js"></script>
+    <script src="widgets.js"></script>
+    <title>Widgets</title>
+</head>
+
+<body ng-app="MyApp">
+
+    <div ng-controller="WidgetsCtrl">
+        <h3>
+            Accordion
+        </h3>
+
+        <div dx-accordion="{
+                    dataSource: accordionData,
+                    itemTemplate: 'item',
+                    itemTitleTemplate: 'title',
+                    collapsible: true
+                }" dx-item-alias="employee">
+            <div data-options="dxTemplate: { name: 'title' }">
+                <span>{{ employee.firstName }}</span>
+                <span>{{ employee.lastName }}</span>
+            </div>
+            <div data-options="dxTemplate: { name: 'item' }">
+                <p>{{ employee.birthDate }}</p>
+                <p>{{ employee.position }}</p>
+            </div>
+        </div>
+    </div>
+
+
+
+</html>
